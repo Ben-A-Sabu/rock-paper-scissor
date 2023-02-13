@@ -1,0 +1,368 @@
+body {
+  height: 100VH;
+  background: linear-gradient(315deg, #20002c, #151216 -14%);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overscroll-behavior: none;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+
+}
+
+
+.controlbtn {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.gameframe {
+  display: none;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#gmeside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+}
+
+.game {
+  height: 100%;
+  width: 90%;
+  margin-left: 5vw;
+}
+
+#gme {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+}
+
+h3 {
+  font-size: clamp(0.75rem, 2.5vw, 1.25rem);
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  text-align: center;
+}
+
+h2 {
+  color: rgb(255, 254, 254);
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+#player-hand {
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
+}
+
+#computer-hand {
+  transform-style: preserve-3d;
+}
+
+
+
+@keyframes shakePlayer {
+  0% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+
+  15% {
+    transform: rotateY(180deg) translateY(-50px);
+  }
+
+  25% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+
+  35% {
+    transform: rotateY(180deg) translateY(-50px);
+  }
+
+  45% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+}
+
+@keyframes shakeComputer {
+  0% {
+    transform: translateY(0px);
+  }
+
+  15% {
+    transform: translateY(-50px);
+  }
+
+  25% {
+    transform: translateY(0px);
+  }
+
+  35% {
+    transform: translateY(-50px);
+  }
+
+  45% {
+    transform: translateY(0px);
+  }
+}
+
+button {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-weight: 200;
+  height: clamp(150px, 20vw, 200px);
+  width: clamp(150px, 20vw, 200px);
+  border-radius: 50%;
+  box-shadow: #8fd49f 3px 3px 3px;
+  padding: 13px 5px 13px;
+  border: 1px solid rgb(111, 194, 144);
+  cursor: pointer;
+  background-color: rgba(22, 158, 119, 0.869);
+
+}
+
+button:hover {
+  background-color: rgba(198, 226, 218, 0.869);
+  transition: all 0.2s ease-in-out;
+}
+
+.feature {
+  float: left;
+  background-color: #0a566368;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 1%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 50vh;
+  transition: opacity 0.5s ease;
+}
+
+.fa-play,
+.fa-pause,
+.fa-arrow-rotate-left,
+.fa-info,
+.fa-music,
+.fa-volume-xmark {
+  color: #0a1463;
+  background-color: gray;
+  position: relative;
+  padding: 15px;
+  border-radius: 50%;
+  box-shadow: #8fd49f 3px 3px 3px;
+  cursor: pointer;
+}
+
+.fa-play:hover,
+.fa-pause:hover,
+.fa-arrow-rotate-left:hover,
+.fa-info:hover,
+.fa-music:hover,
+.fa-music-slash:hover {
+  background-color: #c9c9cf;
+  transition: all 0.2s ease-in-out;
+}
+
+
+.intro {
+  color: rgb(224, 224, 224);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  transition: opacity 0.5s ease;
+}
+
+.intro h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.intro button {
+  width: 150px;
+  height: 50px;
+  border: none;
+  color: rgb(224, 224, 224);
+  font-size: 20px;
+  background: rgb(45, 117, 96);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.popup_content {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: justify;
+  font-size: clamp(1.5rem, 5vw, 1.75rem);
+  color: rgb(7, 9, 10);
+  background-color: white;
+  z-index: 10;
+  box-sizing: border-box;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 0 5% 5% 5%;
+}
+
+
+.popup_content h2 {
+  color: #20002c;
+}
+
+.popup_content #close {
+  border: none;
+  color: rgb(224, 224, 224);
+  font-size: 20px;
+  background: rgb(45, 117, 96);
+  border-radius: 3px;
+  cursor: pointer;
+  width: fit-content;
+  height: fit-content;
+  z-index: 1;
+}
+
+
+
+#GameOver_popup {
+  color: rgb(11, 11, 11);
+  background-color: rgb(62, 205, 148);
+  z-index: 10;
+  border-radius: 5px;
+  margin: 0 5% 5% 5%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 5%;
+  padding: 5%;
+
+}
+
+#GameOver_popup button {
+  width: clamp(100px, 20vh, 200px);
+  height: clamp(30px, 5vh, 50px);
+  border: none;
+  color: rgb(224, 224, 224);
+  font-size: clamp(10px, 2vw, 20px);
+  background: rgb(45, 117, 96);
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 5%;
+
+}
+
+#game_over_nme {
+  font-size: clamp(3.5rem, 5vw, 5.5rem);
+  font-weight: 200;
+  color: #b30505;
+
+}
+
+.popupbtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+
+.scoreboard {
+  width: 50vw;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  color: #e9ece9;
+  background-color: #282727;
+  border-radius: 10px;
+}
+
+.scoreboard h2 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.score {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1vw;
+}
+
+.score h3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  padding-left: 3vw;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 150%;
+  font-weight: 400;
+  color: blue;
+}
+
+.score h3 :nth-child(1) {
+  width: 50%;
+}
+
+.score h3 :nth-child(2) {
+  width: 15%;
+}
+
+.score h3 :nth-child(3) {
+  width: 35%;
+  color: green;
+}
+
+@media screen and (max-width: 768px) {
+
+  #gme {
+    flex-direction: column;
+  }
+
+  #gmeside {
+    height: 90vh;
+    margin-top: 10vh;
+  }
+
+  .feature {
+    display: flex;
+    flex-direction: row;
+    height: 10vh;
+    width: 100%;
+  }
+
+  img {
+    width: 30%;
+
+  }
+
+  button {
+    width: 30%;
+  }
+
+  .score h3 {
+    font-size: 80%;
+  }
+}
