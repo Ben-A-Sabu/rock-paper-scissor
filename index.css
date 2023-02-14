@@ -124,8 +124,8 @@ h2 {
 button {
   font-size: clamp(1.5rem, 5vw, 2.5rem);
   font-weight: 200;
-  height: clamp(150px, 20vw, 200px);
-  width: clamp(150px, 20vw, 200px);
+  height: clamp(100px, 20vw, 125px);
+  width: clamp(100px, 20vw, 125px);
   border-radius: 50%;
   box-shadow: #8fd49f 3px 3px 3px;
   padding: 13px 5px 13px;
@@ -244,7 +244,6 @@ button:hover {
   background-color: rgb(62, 205, 148);
   z-index: 10;
   border-radius: 5px;
-  margin: 0 5% 5% 5%;
   display: none;
   flex-direction: column;
   align-items: center;
