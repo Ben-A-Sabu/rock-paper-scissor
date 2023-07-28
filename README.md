@@ -52,9 +52,10 @@ For more information, please contact me at `benasabu74@gmail.com`.
       <img src="https://github.com/Ben-A-Sabu/rock-paper-scissor/assets/88230486/6f4d3ee4-c5b0-4a9e-b63d-acde1bac821d" alt="Screenshot 3"/>
     </td>
     <td>
-      <img src="https://github.com/Ben-A-Sabu/rock-paper-scissor/assets/88230486/0b4966ff-af14-4a25-b941-4811a39f8100" alt="Screenshot 4"/>
+      <img src="https://github.com/Ben-A-Sabu/rock-paper-scissor/assets/88230486/7276ad66-7839-4daf-a95f-8189d03c80b7" alt="Screenshot 4"/>
     </td>
   </tr>
 </table>
 
+![Screenshot 2023-07-28 142256]()
 
